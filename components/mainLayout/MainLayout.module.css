@@ -1,0 +1,24 @@
+.body {
+  background-color: #fbf7f6;
+  padding: 0 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body a {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #371030;
+  text-decoration: none;
+}
+
+.links{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
