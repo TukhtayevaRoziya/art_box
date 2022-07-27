@@ -22,3 +22,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.btn{
+    width:7%;
+    display:flex;
+  justify-content: space-between;
+}
+
+.active, .body a:hover{
+  color:#EF967B;
+}

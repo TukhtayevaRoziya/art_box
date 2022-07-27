@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { MainLayout } from "../components/mainLayout/MainLayout";
+import "antd/dist/antd.css";
+import { Home } from './../components/home/Home';
+import Head from 'next/head'
 
-export default function Home() {
+export default function Index() {
   return (
-    <>
-      {/* <Head>
+    <div>
+      <Head>
         <title>Art box</title>
-      </Head> */}
+      </Head>
       <MainLayout>
-        Hello I`m NextJs
+        <Home />
         <Link href={"/about"}>About</Link>
         <Link href={"/posts"}>Posts</Link>
       </MainLayout>
-    </>
+    </div>
   );
 }

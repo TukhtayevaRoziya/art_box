@@ -4,8 +4,13 @@ import Image from "next/image";
 
 import style from "./MainLayout.module.css";
 import Link from "next/link";
+import { useRouter } from 'next/router';
+import { Avatar } from "antd";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 export const MainLayout = ({ children }) => {
+  const router = useRouter();
+
   return (
     <>
       <nav>
@@ -19,18 +24,34 @@ export const MainLayout = ({ children }) => {
             />
           </div>
           <div className={style.links}>
-            <Link href={"/"}>Главная</Link>
-            <Link href={"/sets"}>Наборы</Link>
+            <Link href="/">
+              <a className={router.pathname == "/" ? "active" : ""}>Home</a>
+            </Link>
+            <Link href={"/sets"} scroll={false}>
+              Наборы
+            </Link>
             <Link href={"/masterClasses"}>Мастер-классы</Link>
             <Link href={"/paymentAndDelivery"}>Оплата и доставка</Link>
             <Link href={"/blog"}>Блог</Link>
           </div>
           <div>
-            <Link href={'tel:+79955050335'}>☎ +7 995 505 03 35</Link>
+            <Link href={"tel:+79955050335"}>☎ +7 995 505 03 35</Link>
           </div>
-          <div>
-            <Link href={'tel:+79955050335'}>Ava</Link>
-            <Link href={'tel:+79955050335'}>Ava</Link>
+          <div className={style.btn}>
+            <Link href="/user" passHref>
+              <Avatar
+                style={{
+                  backgroundColor: "#FFC1AE",
+                }}
+                icon={<UserOutlined />}
+              />
+            </Link>
+            <Avatar
+              style={{
+                backgroundColor: "#FFC1AE",
+              }}
+              icon={<ShoppingCartOutlined />}
+            />
           </div>
         </div>
       </nav>
